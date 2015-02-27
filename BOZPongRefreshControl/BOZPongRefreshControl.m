@@ -692,6 +692,16 @@ typedef enum {
     ballView.center = ballIdleOrigin;
 }
 
+#pragma mark - Handling Premature Animation Clearing
+
+- (void)reanimate
+{
+    if (state == BOZPongRefreshControlStateRefreshing) {
+        [self resetPaddlesAndBall];
+        [self startPong];
+    }
+}
+
 #pragma mark - Etc, some basic math functions
 
 - (CGPoint)normalizeVector:(CGPoint)vector

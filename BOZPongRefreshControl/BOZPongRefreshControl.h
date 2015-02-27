@@ -79,6 +79,15 @@
  */
 - (void)scrollViewDidEndDragging;
 
+/**
+ *  If the control is currently set to loading, this
+ *  clears all animations and restarts the game of pong.
+ *  Because all animations are cleared when you navigate
+ *  away from a view, the control will be frozen on return.
+ *  Call this method when the view reappears to remedy.
+ */
+- (void)reanimate;
+
 #pragma mark - Configurable properties
 
 /**
